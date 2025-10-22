@@ -18,3 +18,17 @@ class Usuario:
     @senha.setter
     def senha(self, senha_n):
         self.__senha = senha_n
+
+    @property
+    def ativo(self):
+        return self.__ativo
+    @ativo.setter
+    def ativo(self):
+        self.__ativo = not self.__ativo
+
+    @property
+    def id(self):
+        return self.__id
+    @id.setter
+    def id(self, id_n):
+        self.__id = id_n
