@@ -3,7 +3,7 @@ from core.materia.materia import Materia
 
 class MateriaService:
     def __init__(self):
-        self.repository = MateriaRepository
+        self.repository = MateriaRepository()
 
     def listar_materias(self):
         return self.repository.listar()

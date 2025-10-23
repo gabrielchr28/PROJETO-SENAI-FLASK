@@ -23,8 +23,8 @@ class Usuario:
     def ativo(self):
         return self.__ativo
     @ativo.setter
-    def ativo(self):
-        self.__ativo = not self.__ativo
+    def ativo(self, novo_ativo):
+        self.__ativo = novo_ativo
 
     @property
     def id(self):

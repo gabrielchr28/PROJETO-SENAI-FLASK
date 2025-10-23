@@ -31,11 +31,11 @@ class MateriaRepository:
     def adicionar(self, obj_materia):
         conn = self.conectar()
         cursor = conn.cursor()
-        cursor.execute("INSERT INTO materias (nome, sigla_curricular, descricao) VALUES (?, ?, ?);", (obj_materia.nome, obj_materia.sigla_curricular, obj_materia.descricao))
+        cursor.execute("INSERT INTO materias (nome, sigla_curricular, descricao) VALUES (?, ?, ?);", (obj_materia.nome, obj_materia.sigla, obj_materia.descricao))
         conn.commit()
         novo_id = cursor.lastrowid
         conn.close()
-        return {"id": novo_id, "nome": obj_materia.nome, "sigla_curricular": obj_materia.idade, "descricao": obj_materia.descricao}
+        return {"id": novo_id, "nome": obj_materia.nome, "sigla_curricular": obj_materia.sigla, "descricao": obj_materia.descricao}
 
     def atualizar(self, obj_materia):
         conn = self.conectar()
@@ -50,11 +50,11 @@ class MateriaRepository:
 
         cursor.execute(
             "UPDATE materias SET nome = ?, sigla_curricular = ?, descricao = ? WHERE id = ?;",
-            (obj_materia.nome, obj_materia.sigla_curricular, obj_materia.descricao, obj_materia.id),
+            (obj_materia.nome, obj_materia.sigla, obj_materia.descricao, obj_materia.id),
         )
         conn.commit()
         conn.close()
-        return {"id": obj_materia.id, "nome": obj_materia.nome, "sigla_curricular": obj_materia.sigla_curricular, "descricao": obj_materia.descricao}
+        return {"id": obj_materia.id, "nome": obj_materia.nome, "sigla_curricular": obj_materia.sigla, "descricao": obj_materia.descricao}
 
     def remover(self, materia_id):
         conn = self.conectar()
