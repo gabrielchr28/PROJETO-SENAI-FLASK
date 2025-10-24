@@ -11,5 +11,12 @@ app.register_blueprint(usuario_controller)
 app.register_blueprint(professor_controller)
 app.register_blueprint(materia_controller)
 
+@app.route('/bem-vindo')
+def main():
+    return """
+<h1>Seja muito bem vindo a essa API escolar</h1>
+<h2>Gabriel Gonçalves Christófano</h2>
+"""
+
 if __name__ == '__main__':
     app.run(debug=True)
